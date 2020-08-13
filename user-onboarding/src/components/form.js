@@ -93,22 +93,22 @@ const Form = ({addUser}) => {
     return (
         <MemberForm onSubmit={handleSubmit}>
             <label>Name</label>
-            <input type='text' name='name' value={newUser.name} onChange={handleChange}/>
+            <input type='text' name='name' data-cy='name' value={newUser.name} onChange={handleChange}/>
             {errors.name.length > 0 ? <p style={{color:'red'}}>{errors.name}</p> : null}
 
             <label>Email</label>
-            <input type='email' name='email' value={newUser.email} onChange={handleChange}/>
+            <input type='email' name='email' data-cy='email' value={newUser.email} onChange={handleChange}/>
             {errors.email.length > 0 ? <p style={{color:'red'}}>{errors.email}</p> : null}
 
             <label>Password</label>
-            <input type='password' name='password' value={newUser.password} onChange={handleChange}/>
+            <input type='password' name='password' data-cy='password' value={newUser.password} onChange={handleChange}/>
             {errors.password.length > 0 ? <p style={{color:'red'}}>{errors.password}</p> : null}
 
             <label>Terms of Service</label>
             <input type='checkbox' name='ToS' onChange={handleChange} checked={newUser.ToS}/>
             {errors.ToS.length > 0 ? <p style={{color:'red'}}>{errors.ToS}</p> : null}
 
-            <button type='submit' disabled={disabled}>Submit!</button>
+            <button type='submit' data-cy='submit-button' disabled={disabled}>Submit!</button>
         </MemberForm>
     )
 };
